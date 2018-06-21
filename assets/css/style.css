@@ -1,0 +1,36 @@
+body {
+    font-family: 'Share Tech Mono', Arial, Helvetica, sans-serif;
+    background-image: url(../images/thetrivia.jpg);
+}
+
+#container {
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    color: white;
+    line-height: 1.5;
+    margin-top: 150px;
+}
+
+button {
+    display: inline-block;
+	border-style: solid;
+	border-color: gold;
+	border-width: 10px;
+	cursor: pointer;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.image {
+	height: 100px;
+	width: 150px;
+}
+
+#subcontainer {
+    line-height: 1.5;
+    padding: 10px;
+}
