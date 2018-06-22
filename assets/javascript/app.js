@@ -81,10 +81,10 @@ var gameSet = {
         $('#subcontainer').append("<h3>The answer you're looking for is: "+questions[gameSet.currentQuestions].correctAnswer+"</h3>");
         $('#subcontainer').append('<img src="assets/images/times-up.gif" />');
         if (gameSet.currentQuestions==questions.length-1){
-            setTimeout(gameSet.results,3*1000);
+            setTimeout(gameSet.results,5*1000);
         }
         else {
-            setTimeout(gameSet.nextQuestions,3*1000);
+            setTimeout(gameSet.nextQuestions,5*1000);
         }
 
     },
