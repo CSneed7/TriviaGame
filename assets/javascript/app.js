@@ -17,27 +17,27 @@ var questions = [{
     question: "Name the largest freshwater lake in the world?",
     answers: ["Lake Superior", "Lake Tahoe", "Lake Michigan", "Lake Erie"],
     correctAnswer: "Lake Superior",
-    image: "assets/images/lake-superior.gif"
+    image: '<img src="assets/images/lake-superior.gif" />'
 }, {
     question: "Where would you find the Sea of Tranquility?",
     answers: ["Jupiter", "Mars", "Mercury", "The Moon"],
     correctAnswer: "The Moon",
-    image: "assets/images/the-moon.gif"
+    image: '<img src="assets/images/the-moon.gif" />'
 }, {
     question: "What is the captial city of Spain?",
     answers: ["San Juan", "Barcelona", "Madrid", "Seville"],
     correctAnswer: "Madrid",
-    image: "assets/images/madrid.gif"
+    image: '<img src="assets/images/madrid.gif" />'
 }, {
     question: "Who directed the movie trilogy 'The Lord of the Rings'?",
     answers: ["George Lucas", "Peter Jackson", "Steven Spielberg", "Ryan Coogler"],
     correctAnswer: "Peter Jackson",
-    image: "assets/images/peter-jackson.gif"
+    image: '<img src="assets/images/peter-jackson.gif" />'
 }, {
     question: "What actor plays the iconic character 'John Wick'?",
     answers: ["Kevin Hart", "Brad Pitt", "Chris Evans", "Keanu Reeves"],
     correctAnswer: "Keanu Reeves",
-    image: "assets/images/john-wick.gif"
+    image: '<img src="assets/images/john-wick.gif" />'
 }];
 
 var gameSet = {
@@ -79,6 +79,7 @@ var gameSet = {
         gameSet.unanswered++;
         $('#subcontainer').html("<h2>Time's Up!");
         $('#subcontainer').append("<h3>The answer you're looking for is: "+questions[gameSet.currentQuestions].correctAnswer+"</h3>");
+        $('#subcontainer').append('<img src="assets/images/times-up.gif" />');
         if (gameSet.currentQuestions==questions.length-1){
             setTimeout(gameSet.results,3*1000);
         }
@@ -101,9 +102,11 @@ var gameSet = {
         clearInterval(timer);
         if($(e.target).data("name")==questions[gameSet.currentQuestions].correctAnswer){
             gameSet.answerCorrect();
+            $('#subcontainer').append(questions[gameSet.currentQuestions].image);
         }
         else {
             gameSet.answerIncorrect();
+            $('#subcontainer').append('<img src="assets/images/incorrect.gif" />');
         }
     },
 
@@ -123,6 +126,7 @@ var gameSet = {
 
     answerIncorrect: function(){
         console.log("You suck, go read a book or google more.");
+        image: "assets/images/incorrect.gif";
         clearInterval(timer);
         gameSet.incorrect++;
         $("#subcontainer").html("<h2>Nope! Go read a book or google more.</h2>");
